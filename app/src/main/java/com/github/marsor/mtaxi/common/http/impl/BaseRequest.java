@@ -1,6 +1,7 @@
 package com.github.marsor.mtaxi.common.http.impl;
 
 import com.github.marsor.mtaxi.common.http.IRequest;
+import com.github.marsor.mtaxi.common.http.api.API;
 import com.google.gson.Gson;
 
 import java.util.HashMap;
@@ -26,8 +27,8 @@ public class BaseRequest implements IRequest {
         this.url = url;
         header = new HashMap<>();
         body = new HashMap<>();
-        header.put("Application-Id", "MTaxiID");
-        header.put("API_KEY", "MTaxiKey");
+        header.put("X-Bmob-Application-Id", API.Config.getAppId());
+        header.put("X-Bmob-REST-API-Key", API.Config.getAppKey());
     }
 
     @Override
