@@ -1,0 +1,47 @@
+package com.github.marsor.mtaxi.account.model.response;
+
+/**
+ * Author: Marsor
+ * Github: https://github.com/Marsor707
+ * Email: 369135912@qq.com
+ */
+
+public class Account {
+
+    private String token;
+    private String uid;
+    private String account;
+    private long expired;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public long getExpired() {
+        return expired;
+    }
+
+    public void setExpired(long expired) {
+        this.expired = expired;
+    }
+}

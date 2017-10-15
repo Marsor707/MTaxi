@@ -12,7 +12,6 @@ import android.widget.EditText;
 
 import com.github.marsor.mtaxi.R;
 import com.github.marsor.mtaxi.common.util.FormatUtil;
-import com.github.marsor.mtaxi.main.view.MainActivity;
 
 /**
  * Author: Marsor
@@ -25,11 +24,9 @@ public class PhoneInputDialog extends Dialog {
     private View mRoot;
     private EditText mPhone;
     private Button mButton;
-    private MainActivity mainActivity;
 
-    public PhoneInputDialog(MainActivity mainActivity) {
-        this(mainActivity, R.style.Dialog);
-        this.mainActivity = mainActivity;
+    public PhoneInputDialog(Context context) {
+        this(context, R.style.Dialog);
     }
 
     public PhoneInputDialog(Context context, int theme) {
@@ -73,10 +70,12 @@ public class PhoneInputDialog extends Dialog {
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dismiss();
+
                 String phone = mPhone.getText().toString();
                 SmsCodeDialog dialog = new SmsCodeDialog(getContext(), phone);
                 dialog.show();
+                PhoneInputDialog.this.dismiss();
+
             }
         });
 
@@ -97,4 +96,5 @@ public class PhoneInputDialog extends Dialog {
         mButton.setEnabled(legal);
 
     }
+
 }
